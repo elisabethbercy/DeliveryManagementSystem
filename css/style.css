@@ -1,26 +1,29 @@
-/* <div class="row mt-2">
-<img class="col-sm" src="ck.png"  style="height:auto;   width:20%; object-fit:cover;" height="5%" width="150px">
-</div>   
 
-<div class="" style="height:100px; width:500px; margin-left:1200px;">
-<img src="AN.png"  style="object-fit:cover; height:auto;  width:100%;">
-</div>   */
 h1{
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+}
+.delivery{
+    margin-top: -40px;
+    margin-left: 700px;
+}
+.delivery .link{
+    font-size: x-large;
+    /* margin-left:  */
 }
 .new-link a{
     font-size: medium;
     border: 1px solid #0074d9;
+    margin-left: 10px;
 }
 .new-link a:hover{
     background-color: #0074d9;
     color: white;
 }
 .search-form{
-    /* float: right; */
+    float: right;
     margin-top: -30px;
-    margin-left: 800px;
+    margin-left: 820px;
 }
 
 .form{

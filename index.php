@@ -30,16 +30,15 @@
                   <hr>
                   <br/>
                   <form method="POST" action="index.php">
-                        <div class="row ">
+                        <div class="row">
 
                               <div class="col-sm new-link">
                                     <a href="new.php" class="btn btn-outline-primary">Add a new delivery</a>
                               </div>
                               
-                              <div class="search-form float-end">
+                              <div class="search-form">
                                     <div class="col-md-8 form-group">
                                           <input type="text" class="form-control" placeholder="Rechercher">
-                                          <!-- <button type="submit" class="btn btn-primary">Rechercher</button> -->
                                     </div>
                                     <button type="submit" class="btn btn-primary col-md">Search</button>
                               </div>
@@ -49,15 +48,15 @@
 
                    
 
-                        <div class="row mt-2">
-                              <!-- <img class="col-sm" src="ck.png"  style="height:auto;   width:20%; object-fit:cover;" height="5%" width="150px"> -->
-                        </div>
+                        <!-- <div class="row mt-2">
+                               <img class="col-sm" src="ck.png"  style="height:auto;   width:20%; object-fit:cover;" height="5%" width="150px">
+                        </div> -->
 
                   <div class="table-responsive">
                         <table id="editable_table" class="table table-bordered table-striped">
                               <thead>
                                     <tr>
-                                          <th>ID</th>
+                                          <th>No Facture</th></th>
                                           <th>Expediteur</th>
                                           <th>Receveur</th>
                                           <th>Heure d'envoie</th>
@@ -75,7 +74,7 @@
 
                                                       echo '
                                                       <tr>
-                                                            <td>'.$row["id"].'</td>
+                                                            <td>'.$row["numero_fiche"].'</td>
                                                             <td>'.$row["envoyeur"].'</td>
                                                             <td>'.$row["receveur"].'</td>
                                                             <td>'.$row["heure_envoie"].'</td>      
@@ -90,29 +89,28 @@
                         </div>  
                   </div> 
             </div>
-            <div class="" style="height:100px; width:500px; margin-left:1200px;">
-                  <img src="AN.png"  style="object-fit:cover; height:auto;  width:100%;">
-            </div>  
+            <!-- <div class="" style="height:100px; width:500px; margin-left:1200px;"> -->
+                  <!-- <img src="AN.png"  style="object-fit:cover; height:auto;  width:100%;"> -->
+            <!-- </div>   -->
       </body>  
 </html> 
 
 <script>  
       $(document).ready(function(){  
-      $('#editable_table').Tabledit({
-            url:'action.php',
-            columns:{
-            identifier:[0, "id"],
-            editable:[[1, 'envoyeur'], [2, "heure_envoie"], [3,'receveur'], [4,'heure_reception']]
-            },
-            restoreButton:false,
-            onSuccess:function(data, textStatus, jqXHR)
-            {
-            if(data.action == 'delete')
-            {
-            $('#'+data.id).remove();
-            }
-            }
-      });
-      
+            $('#editable_table').Tabledit({
+                  url:'action.php',
+                  columns:{
+                  identifier:[0, "id"],
+                  editable:[[1, 'envoyeur'], [2, "heure_envoie"], [3,'receveur'], [4,'heure_reception']]
+                  },
+                  restoreButton:false,
+                  onSuccess:function(data, textStatus, jqXHR)
+                  {
+                  if(data.action == 'delete')
+                  {
+                  $('#'+data.id).remove();
+                  }
+                  }
+            });
       });  
  </script>
